@@ -66,7 +66,6 @@ fn xxx(d: impl Test) {
 
 #[test]
 fn make_fat_pointer() {
-    std::marker::PhantomData
     let mut data = Data { a: 3, b: 2 };
     // vtable is like special purpose array of pointer-length types with a fixed
     // format where the three first values has a special meaning like the
@@ -135,7 +134,6 @@ fn display_sth3(sth: &dyn Debug) {
 }
 
 trait Transform {
-    
     fn transform(&self) -> Self;
 }
 
@@ -143,12 +141,10 @@ trait Transform {
 struct Circle(u32);
 
 impl Transform for Circle {
-    
     fn transform(&self) -> Self {
         Circle(self.0 * 2)
     }
 }
-
 
 #[test]
 fn test_display_trait_object() {
@@ -162,8 +158,6 @@ fn test_display_trait_object() {
     let shape = Circle(5);
     display_sth3(&shape);
 }
-
-
 
 #[test]
 fn display_dyn_trait_fat_pointer() {

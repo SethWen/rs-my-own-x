@@ -3,7 +3,11 @@ pub fn hamming_distance(string_a: &str, string_b: &str) -> usize {
         panic!("Strings must be of equal length");
     }
 
-    string_a.chars().zip(string_b.chars()).filter(|(a, b)| a != b).count()
+    string_a
+        .chars()
+        .zip(string_b.chars())
+        .filter(|(a, b)| a != b)
+        .count()
 }
 
 #[cfg(test)]

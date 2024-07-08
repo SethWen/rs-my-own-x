@@ -67,7 +67,10 @@ impl Token {
             Token::Minus => left.parse::<f64>().unwrap() - right.parse::<f64>().unwrap(),
             Token::Mul => left.parse::<f64>().unwrap() * right.parse::<f64>().unwrap(),
             Token::Div => left.parse::<f64>().unwrap() / right.parse::<f64>().unwrap(),
-            Token::Power => left.parse::<f64>().unwrap().powf(right.parse::<f64>().unwrap()),
+            Token::Power => left
+                .parse::<f64>()
+                .unwrap()
+                .powf(right.parse::<f64>().unwrap()),
             _ => todo!(),
         }
     }
