@@ -1,3 +1,5 @@
+#![allow(clippy::size_of_ref)]
+
 // A reference to a trait object is a fat pointer: (data_ptr, vtable_ptr)
 use std::fmt::Debug;
 use std::mem::size_of;
